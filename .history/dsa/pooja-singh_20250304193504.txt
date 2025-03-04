@@ -13,7 +13,7 @@ You will also find a healthy mix of the use of two-three data structures or algo
 That being said, I would recommend moving from the “easy” phase as soon as possible, for its the mediums that will be asked mostly in interviews.
 Must-do Easy questions [ Download the list here ] :
 13.. Roman to Integer
-20.. Valid Parentheses
+20. Valid Parentheses
 21. Merge Two Sorted Lists
 141. Linked List Cycle
 155. Min Stack
