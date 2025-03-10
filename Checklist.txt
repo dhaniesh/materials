@@ -1,0 +1,59 @@
+FastAPI
+- route/path operation
+- Validation
+- serialization
+- Dependecy Injection
+- Async
+- Middleware
+- Security
+- Deployment
+- Database
+
+CICD
+- linux
+- scripting (Bash/python)
+- git
+- github acitons
+- jenkins
+- gitlab
+- docker
+- terraform/cloudformation
+- devsecops
+
+AWS
+- ec2
+- lambda
+- beanstalk
+- s3
+- ebs
+- efs
+- vpc
+- route53
+- cloudfront
+- rds
+- aurora
+- dynamodb
+- sqs
+- sns
+- state machine
+- iam
+- kms
+- systems manager
+- cloudwatch
+- cloudtrail
+
+Auth
+- autorization
+- authentication
+- session management
+- stateless and stateful
+
+SQL
+- basic (select)
+- filters
+- sort and limit
+- joins
+- aggregate
+- subqueries
+- fml
+- db design and concepts (normalization, indexing)
