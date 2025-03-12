@@ -20,7 +20,7 @@ Input: nums = [2,0,2,1,1,0] Output: [0,0,1,1,2,2]
 - use two pointer, l, r
 - third pointer i for each element
 - if i == 0, swap to left, l++, i++
-- elif i == 2, swap to right, r-- (i is not ++ here, right can contain a 0 or 1)
+- elif i == 2, swap to right, r-- (i is not ++ here, current is swapped, so it can contain a 0 or 1)
 - else (it is a 1, so i++)
 
 
@@ -43,3 +43,38 @@ Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 - Kadane's algorithm
 - If a number makes the sum less than 0, make sum equate to 0
 - add current element and check 
+
+
+121. Best Time to Buy and Sell Stock
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+Input: prices = [7,1,5,3,6,4] Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+
+- set profit=0, buy = maxsize
+- if price < buy, but the stock
+- on every iteration check for price - buy which= selling price
+- track max selling price
+
+
+2149. Rearrange Array Elements by Sign
+You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
+[pos, neg, pos, neg ...] order maintained
+Input: nums = [3,1,-2,-5,2,-4] Output: [3,-2,1,-5,2,-4]
+
+- p, n = 0,2
+- init empty arr [0] * len(nums)
+- iterate through nums array
+- if >0 arr[p], if <0 arr[n]
+
+
+31. Next Permutation
+Input: nums = [1,2,3] Output: [1,3,2]
+- iterate from n-2
+- check n-2 > n-1...
+- if false, set that num as x
+- find a min value in nums[i+1:] that is small that nums[i], set y
+- swap x, y
+- reverse nums[x+1:]
