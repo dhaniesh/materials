@@ -78,3 +78,15 @@ Input: nums = [1,2,3] Output: [1,3,2]
 - find a min value in nums[i+1:] that is small that nums[i], set y
 - swap x, y
 - reverse nums[x+1:]
+
+
+128. Longest Consecutive Sequence
+Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+You must write an algorithm that runs in O(n) time.
+Input: nums = [100,4,200,1,3,2]
+Output: 4
+Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+- use set to remove duplicates
+- iterate through nums
+- if num-1 exists, it's not the starting point of seq, so skip that value
+- check for next sums and update seq using while loop, update max of seq
