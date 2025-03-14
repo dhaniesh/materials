@@ -90,3 +90,25 @@ Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefor
 - iterate through nums
 - if num-1 exists, it's not the starting point of seq, so skip that value
 - check for next sums and update seq using while loop, update max of seq
+
+
+73. Set Matrix Zeroes
+Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+You must do it in place.
+Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+Output: [[1,0,1],[0,0,0],[1,0,1]]
+
+- keep all the tracking in the first row and column
+- for (0, 0), use a variable
+- on the second traversal, modify the range (1 to i and i to j), leaving the first row and colums for reference
+- then modify the row, then the column, order is important, if column goes first, it would change the tracking of the row data
+
+
+48. Rotate Image
+You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [[7,4,1],[8,5,2],[9,6,3]]
+
+- transpose (ij, ji = ji, ij) (run only till the middle of each row)
+- reverse the matrix wrt y axis
