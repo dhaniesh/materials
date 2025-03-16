@@ -155,3 +155,30 @@ Output: [1,2,3,6,9,8,7,4,5]
 - travel right, down, left, up
 - edge cases
 
+
+560. Subarray Sum Equals K
+Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
+A subarray is a contiguous non-empty sequence of elements within an array.
+Input: nums = [1,1,1], k = 2
+Output: 2
+
+- iterate, find prefix sum
+- if sum equals k, count++
+- if sum-k in hash, count += hash[sum-k]
+- update hash (hash[sum] = hash.get(sum,0) + 1)
+- return count
+
+
+Arrays hard
+
+15. 3Sum
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+Notice that the solution set must not contain duplicate triplets.
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+
+- sort the array
+- iterate the array, num will be the first element
+- use two pointers, l and r from (i+1 till n-2)
+- if sum > 0 r--, sum < 0 l++
+- else-> sum is 0, add to result (note: may contain duplicates, so check for adjacent elements from left and right and skip them)
