@@ -171,6 +171,16 @@ Output: 2
 
 Arrays hard
 
+
+229. Majority Element II
+Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+Input: nums = [3,2,3] Output: [3]
+
+- extended moore voting algorithm
+- after all iteration, check the count of the candidates
+- reutrn all those if > n/3
+
+
 15. 3Sum
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 Notice that the solution set must not contain duplicate triplets.
@@ -182,3 +192,14 @@ Output: [[-1,-1,2],[-1,0,1]]
 - use two pointers, l and r from (i+1 till n-2)
 - if sum > 0 r--, sum < 0 l++
 - else-> sum is 0, add to result (note: may contain duplicates, so check for adjacent elements from left and right and skip them)
+
+
+88. Merge Sorted Array
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+Output: [1,2,2,3,5,6]
+Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+
+- use n as while (as nums2 has to be updated in nums1 - in place)
+- if m >= 0 and n1[n] > n2[m], then assign
+- elif n >= 0, assign n2[n] to current
