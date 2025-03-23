@@ -246,3 +246,8 @@ Input: nums = [-1,0,3,5,9,12], target = 9 Output: 4 Explanation: 9 exists in num
 Implement Lower Bound
 You are given an array 'arr' sorted in non-decreasing order and a number 'x'. You must return the index of the lower bound of 'x'. (= or greater than x)
 - binary search, if arr[mid] >= x, else
+
+34. Find First and Last Position of Element in Sorted Array
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+- use bs, upper bound and lower bound, use bias when ==
