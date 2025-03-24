@@ -101,3 +101,6 @@ Output: true
 
 540. Single Element in a Sorted Array
 - int: indexes will be in pair if it occurs twice, use this to traverse the array
+
+162. Find Peak Element
+- int: edge cases, else use bs
