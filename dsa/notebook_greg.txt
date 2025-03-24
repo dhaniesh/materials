@@ -97,4 +97,7 @@ Output: true
 - use m and l, then m, l, and target, same for right
 
 81. Search in Rotated Sorted Array II
-- 
+- use m and l, then m, l, and target, same for right (edge case: l == m == r)
+
+540. Single Element in a Sorted Array
+- int: indexes will be in pair if it occurs twice, use this to traverse the array
