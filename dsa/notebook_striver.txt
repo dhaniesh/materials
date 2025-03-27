@@ -4,7 +4,6 @@ Longest Subarray with Sum K
 Given an array arr[] containing integers and an integer k, your task is to find the length of the longest subarray where the sum of its elements is equal to the given value k. If there is no subarray with sum equal to k, return 0.
 Input: arr[] = [10, 5, 2, 7, 1, -10], k = 15
 Output: 6
-
 - hashmap
 - sum up the left elements
 - if sum == k update max_sum
@@ -12,7 +11,6 @@ Output: 6
 - if sum not in hashmap, hashmap[sum] = i (hashmap should not be updated, reason: maximum length occurs when hashmap[sum] has min value)
 
 Longest Subarray with Sum K if values are greater than 0
-
 - use two pointers
 - if value is more than k, i++
 - j++, if sum == nums[j], update max
@@ -22,7 +20,6 @@ Given two sorted arrays a[] and b[], where each array may contain duplicate elem
 Union of two arrays can be defined as the set containing distinct common elements that are present in either of the arrays.
 Input: a[] = [1, 2, 3, 4, 5], b[] = [1, 2, 3, 6, 7]
 Output: 1 2 3 4 5 6 7
-
 - thinking
 - while i<m, j<n
 - >, <, = conditions
@@ -36,7 +33,6 @@ Arrays medium
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.
 Input: nums = [2,7,11,15], target = 9. Output: [0,1].Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
-
 - use hashmap
 - iterate through nums, check if target-num present in hashmap
 - return if match found, else add the value:index
@@ -47,7 +43,6 @@ Given an array nums with n objects colored red, white, or blue, sort them in-pla
 We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
 You must solve this problem without using the library's sort function.
 Input: nums = [2,0,2,1,1,0] Output: [0,0,1,1,2,2]
-
 - use two pointer, l, r
 - third pointer i for each element
 - if i == 0, swap to left, l++, i++
@@ -58,7 +53,6 @@ Input: nums = [2,0,2,1,1,0] Output: [0,0,1,1,2,2]
 169. Majority Element
 Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
 Input: nums = [3,2,3] Output: 3
-
 - moore's voting algorithm (more than n/2, all will be cancelled out except majority element)
 - init count and majority var
 - if count == 0, majority = current value
@@ -70,7 +64,6 @@ Input: nums = [3,2,3] Output: 3
 Given an integer array nums, find the subarray with the largest sum, and return its sum.
 Input: nums = [-2,1,-3,4,-1,2,1,-5,4] Output: 6
 Explanation: The subarray [4,-1,2,1] has the largest sum 6.
-
 - Kadane's algorithm
 - If a number makes the sum less than 0, make sum equate to 0
 - add current element and check 
@@ -83,33 +76,28 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 Input: prices = [7,1,5,3,6,4] Output: 5
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
 Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
-
 - set profit=0, buy = maxsize
 - if price < buy, buy the stock
 - on every iteration check for price - buy which= selling price
 - track max selling price
 
-
 2149. Rearrange Array Elements by Sign
 You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
 [pos, neg, pos, neg ...] order maintained
 Input: nums = [3,1,-2,-5,2,-4] Output: [3,-2,1,-5,2,-4]
-
 - p, n = 0,2
 - init empty arr [0] * len(nums)
 - iterate through nums array
 - if >0 arr[p], if <0 arr[n]
-
 
 31. Next Permutation
 Input: nums = [1,2,3] Output: [1,3,2], [1, 2, 4, 3, 1], [1, 3, 1, 4, 2]
 - iterate from n-2
 - check n-2 > n-1...
 - if false, set that num as x
-- find a min value in nums[i+1:] that is small than nums[i], set y
+- find a min value in nums[i+1:] that is greater than nums[i], set y
 - swap x, y
 - reverse nums[x+1:]
-
 
 128. Longest Consecutive Sequence
 Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
@@ -122,46 +110,38 @@ Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefor
 - if num-1 exists, it's not the starting point of seq, so skip that value
 - check for next sums and update seq using while loop, update max of seq
 
-
 73. Set Matrix Zeroes
 Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
 You must do it in place.
 Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
 Output: [[1,0,1],[0,0,0],[1,0,1]]
-
 - keep all the tracking in the first row and column
 - for (0, 0), use a variable
 - on the second traversal, modify the range (1 to i and i to j), leaving the first row and colums for reference
 - then modify the row, then the column, order is important, if column goes first, it would change the tracking of the row data
-
 
 48. Rotate Image
 You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
 You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [[7,4,1],[8,5,2],[9,6,3]]
-
 - transpose (ij, ji = ji, ij) (run only till the middle of each row)
 - reverse the matrix wrt y axis
-
 
 54. Spiral Matrix
 Given an m x n matrix, return all elements of the matrix in spiral order.
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [1,2,3,6,9,8,7,4,5]
-
 - top=0, bottom=m-1, left=0, right=n-1
 - while top<=bottom and left<=right
 - travel right, down, left, up
 - edge cases
-
 
 560. Subarray Sum Equals K
 Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
 A subarray is a contiguous non-empty sequence of elements within an array.
 Input: nums = [1,1,1], k = 2
 Output: 2
-
 - iterate, find prefix sum
 - if sum equals k, count++
 - if sum-k in hash, count += hash[sum-k]
@@ -171,22 +151,18 @@ Output: 2
 
 Arrays hard
 
-
 229. Majority Element II
 Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
 Input: nums = [3,2,3] Output: [3]
-
 - extended moore voting algorithm
 - after all iteration, check the count of the candidates
 - reutrn all those if > n/3
-
 
 15. 3Sum
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 Notice that the solution set must not contain duplicate triplets.
 Input: nums = [-1,0,1,2,-1,-4]
 Output: [[-1,-1,2],[-1,0,1]]
-
 - sort the array
 - iterate the array, num will be the first element
 - use two pointers, l and r from (i+1 till n-2)
@@ -251,3 +227,11 @@ You are given an array 'arr' sorted in non-decreasing order and a number 'x'. Yo
 Input: nums = [5,7,7,8,8,10], target = 8
 Output: [3,4]
 - use bs, upper bound and lower bound, use bias when ==
+
+1901. Find a Peak Element II
+Input: mat = [[10,20,15],[21,30,14],[7,16,32]]
+Output: [1,1]
+Explanation: Both 30 and 32 are peak elements so [1,1] and [2,2] are both acceptable answers.
+- bs on column, check left and right, traverse accordingly
+
+1482. Minimum Number of Days to Make m Bouquets
