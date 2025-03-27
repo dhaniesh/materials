@@ -104,3 +104,7 @@ Output: true
 
 162. Find Peak Element
 - int: edge cases, else use bs
+- int2: right and left elements, check index as well
+
+209. Minimum Size Subarray Sum
+- sliding window
