@@ -235,3 +235,11 @@ Explanation: Both 30 and 32 are peak elements so [1,1] and [2,2] are both accept
 - bs on column, check left and right, traverse accordingly
 
 1482. Minimum Number of Days to Make m Bouquets
+- iteration over min and max
+- check if you can make Bouquets
+- optimise it using bs
+
+1011. Capacity To Ship Packages Within D Days
+- iteration over max and sum
+- check if day is less than D Days
+- optimise using binary search
