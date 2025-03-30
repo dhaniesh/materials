@@ -107,4 +107,33 @@ Output: true
 - int2: right and left elements, check index as well
 
 209. Minimum Size Subarray Sum
+Input: target = 7, nums = [2,3,1,2,4,3] Output: 2
 - sliding window
+
+643. Maximum Average Subarray I
+Input: nums = [1,12,-5,-6,50,3], k = 4
+Output: 12.75000
+Explanation: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
+- sliding window, do the average when returning
+
+1004. Max Consecutive Ones III
+Input: nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2
+Output: 6
+Explanation: [1,1,1,0,0,1,1,1,1,1,1]
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+- sliding window, 
+
+3. Longest Substring Without Repeating Characters
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+- sliding window, use a set to track the Characters
+
+LINKED LIST
+
+83. Remove Duplicates from Sorted List
+- use while loop, if == assign next to next.next, else next
+
+205. Isomorphic Strings
+Input: s = "egg", t = "add" Output: true, Input: s = "badc", t = "baba"
+Output: false

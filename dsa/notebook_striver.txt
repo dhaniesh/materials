@@ -243,3 +243,25 @@ Explanation: Both 30 and 32 are peak elements so [1,1] and [2,2] are both accept
 - iteration over max and sum
 - check if day is less than D Days
 - optimise using binary search
+
+STRINGS
+
+1021. Remove Outermost Parentheses
+Input: s = "(()())(())"
+Output: "()()()"
+- use counter, append to res only when counter > 1
+
+151. Reverse Words in a String
+Input: s = "a good   example"
+Output: "example good a"
+- strip, split, iterate, skip when '', join and return
+
+1903. Largest Odd Number in String
+Input: num = "52346"
+Output: "523"
+- iterate in reverse, if odd, return [:i+1]
+
+14. Longest Common Prefix
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+- set prefix and calculate every string in the strs
