@@ -129,11 +129,38 @@ Output: 3
 Explanation: The answer is "abc", with the length of 3.
 - sliding window, use a set to track the Characters
 
+205. Isomorphic Strings
+Input: s = "egg", t = "add" Output: true, Input: s = "badc", t = "baba"
+Output: false
+- use s->t and t->s mapping, only a single mapping should be valid, if not, it's not an Isomorphic string
+
 LINKED LIST
 
 83. Remove Duplicates from Sorted List
 - use while loop, if == assign next to next.next, else next
 
-205. Isomorphic Strings
-Input: s = "egg", t = "add" Output: true, Input: s = "badc", t = "baba"
-Output: false
+206. Reverse Linked List
+Input: head = [1,2,3,4,5]
+Output: [5,4,3,2,1]
+- use head and prev, traverse and reverse (🧠: should I return head or prev at the end)
+
+21. Merge Two Sorted Lists
+Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+- use a dummy node, traverse through smaller values, check if both are traversed
+- (🧠: if either of the one is not discovered, it's not req to traverse, just point the cur node to the undiscovered link)
+
+876. Middle of the Linked List
+Input: head = [1,2,3,4,5]
+Output: [3,4,5]
+Explanation: The middle node of the list is node 3.
+- slow and fast, use a count variable to store binary, flip each time with fast, if count move slow
+
+141. Linked List Cycle
+- a1: use a slow and fast node
+- a2: use set to keep track of id
+
+19. Remove Nth Node From End of List
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+- traverse the leader, follower then follows, (edge case: if len and n are equal, means the first element, return head.next)

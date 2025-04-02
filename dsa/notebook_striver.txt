@@ -265,3 +265,13 @@ Output: "523"
 Input: strs = ["flower","flow","flight"]
 Output: "fl"
 - set prefix and calculate every string in the strs
+
+451. Sort Characters By Frequency
+- use counter and most_common properties
+
+1614. Maximum Nesting Depth of the Parentheses
+Input: s = "(1+(2*3)+((8)/4))+1"
+Output: 3
+Explanation:
+Digit 8 is inside of 3 nested parentheses in the string.
+- if ( ++, if ) --
