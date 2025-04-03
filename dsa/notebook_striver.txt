@@ -275,3 +275,25 @@ Output: 3
 Explanation:
 Digit 8 is inside of 3 nested parentheses in the string.
 - if ( ++, if ) --
+
+LINKED LIST
+237. Delete Node in a Linked List
+Input: head = [4,5,1,9], node = 5
+Output: [4,1,9]
+- One, change your appearance to whom you want to be. Two, kill that person.
+
+142. Linked List Cycle II (ref image)
+- hashmap, if node in hashmap, return, else None
+
+234. Palindrome Linked List
+- O(n) - traverse and store val in array
+- O(1) - slow, fast, slow points to mid, reverse from mid to end, traverse from left to right
+
+328. Odd Even Linked List
+- use two pointers, odd and even, use even_head to track even, at the end, point even_head to odds end
+
+160. Intersection of Two Linked Lists
+- use set or hash, return node\
+
+2. Add Two Numbers
+- use sum %10, carry //10 
