@@ -1,0 +1,10 @@
+1. Back of the envelope calculations
+2. Domain Name System
+3. Load Balancers: Global vs Local Load balancers
+4. Databases : Types, replication, sharing
+5. Content Delivery Network
+6. CAP Theorem
+7. Scalability: Horizontal vs Vertical
+8. Network Abstractions: Remote Procedure calls
+9. Distributed Messaging Queue
+10. Rate limiter

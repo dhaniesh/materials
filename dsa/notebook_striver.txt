@@ -1,4 +1,4 @@
-Arrays easy
+ARRAYS EASY
 
 Longest Subarray with Sum K
 Given an array arr[] containing integers and an integer k, your task is to find the length of the longest subarray where the sum of its elements is equal to the given value k. If there is no subarray with sum equal to k, return 0.
@@ -18,7 +18,7 @@ Longest Subarray with Sum K if values are greater than 0
 Find the Union
 Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order.
 Union of two arrays can be defined as the set containing distinct common elements that are present in either of the arrays.
-Input: a[] = [1, 2, 3, 4, 5], b[] = [1, 2, 3, 6, 7]
+Input: a = [1, 2, 3, 4, 5], b = [1, 2, 3, 6, 7]
 Output: 1 2 3 4 5 6 7
 - thinking
 - while i<m, j<n
