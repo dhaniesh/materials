@@ -522,3 +522,38 @@ Output: 3
 
 572. Subtree of Another Tree
 - 🧠: for each node, check if tree is same, else there should exist a left or right
+
+112. Path Sum
+- 🧠: recursion, instead of adding values, subtract target at every node, leaf val should match the target
+
+235. Lowest Common Ancestor of a Binary Search Tree
+- 🧠: binary search
+
+102. Binary Tree Level Order Traversal
+- 🧠: BFS
+
+199. Binary Tree Right Side View
+- 🧠: BFS + level[-1]
+
+1448. Count Good Nodes in Binary Tree
+- 🧠: DFS, max count at each node
+
+98. Validate Binary Search Tree
+- 🧠: inorder in a BST is always sorted, + edge cases
+
+230. Kth Smallest Element in a BST
+- 🧠: inorder, return array[k-1]
+
+530. Minimum Absolute Difference in BST
+Given the root of a Binary Search Tree (BST), return the minimum absolute difference between the values of any two different nodes in the tree.
+- 🧠: inorder, find min
+
+105. Construct Binary Tree from Preorder and Inorder Traversal
+- pop postorder-> that's the index of root node, use it to create a node
+- root.left = recursion(Preorder, inorder[0:ind])
+- root.right = recursion(Preorder, inorder[ind+1:])
+- return root
+
+297. Serialize and Deserialize Binary Tree
+- ser: inorder and use '*' to indicate null
+- des: build tree using inorder
