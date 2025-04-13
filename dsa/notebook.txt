@@ -557,3 +557,6 @@ Given the root of a Binary Search Tree (BST), return the minimum absolute differ
 297. Serialize and Deserialize Binary Tree
 - ser: inorder and use '*' to indicate null
 - des: build tree using inorder
+
+124. Binary Tree Maximum Path Sum
+- calc left, right (both-maxs) , calc current sum and global max
