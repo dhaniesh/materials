@@ -560,3 +560,54 @@ Given the root of a Binary Search Tree (BST), return the minimum absolute differ
 
 124. Binary Tree Maximum Path Sum
 - calc left, right (both-maxs) , calc current sum and global max
+
+
+==================== TRIE ====================
+
+208. Implement Trie (Prefix Tree)
+A trie (pronounced as "try") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.
+Implement the Trie class:
+Trie() Initializes the trie object.
+void insert(String word) Inserts the string word into the trie.
+boolean search(String word) Returns true if the string word is in the trie (i.e., was inserted before), and false otherwise.
+boolean startsWith(String prefix) Returns true if there is a previously inserted string word that has the prefix prefix, and false otherwise.
+- TrieNode -> children={}, is_end=false
+- insert: check if child exists for a node, if yes: go to the node, else: create a node and go to the node
+- search: check if child exists for a node, if no: word doesn't exist, else: pass on to the node ,, at the end of traversal check if the node has is_end to confirm the word exists
+- startsWith: same as search, but return after traversal (no is_end check)
+
+211. Design Add and Search Words Data Structure (:\)
+Implement the WordDictionary class:
+WordDictionary() Initializes the object.
+void addWord(word) Adds word to the data structure, it can be matched later.
+bool search(word) Returns true if there is any string in the data structure that matches word or false otherwise. word may contain dots '.' where dots can be matched with any letter.
+- add is straight forward
+- search: conditions (c == '.' ,  c in children), recursion(dfs)
+
+==================== HEAPS ====================
+
+1046. Last Stone Weight
+You are given an array of integers stones where stones[i] is the weight of the ith stone.
+We are playing a game with the stones. On each turn, we choose the heaviest two stones and smash them together. Suppose the heaviest two stones have weights x and y with x <= y. The result of this smash is:
+If x == y, both stones are destroyed, and
+If x != y, the stone of weight x is destroyed, and the stone of weight y has new weight y - x.
+At the end of the game, there is at most one stone left.
+Return the weight of the last remaining stone. If there are no stones left, return 0.
+- use heap, pop twice and get largest
+- push to heap if the values are not same
+- return 0 or heap[0]
+
+703. Kth Largest Element in a Stream
+You are part of a university admissions office and need to keep track of the kth highest test score from applicants in real-time. This helps to determine cut-off marks for interviews and admissions dynamically as new applicants submit their scores.
+You are tasked to implement a class which, for a given integer k, maintains a stream of test scores and continuously returns the kth highest test score after a new score has been submitted. More specifically, we are looking for the kth highest score in the sorted list of all scores.
+- use heap, discard elements > k, ie keep only k elements
+- push to heap, pop it (if len>k) and return heap[0]
+
+347. Top K Frequent Elements
+- use counter, maintain heap size of k (count, number)
+
+973. K Closest Points to Origin
+- min heap, maintain size
+
+215. Kth Largest Element in an Array
+- min heap, maintain size
