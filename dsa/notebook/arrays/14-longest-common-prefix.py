@@ -25,7 +25,6 @@ import unittest
 
 """
 Approach:
-
 - calculate prefix for adjacent word
 
 """
