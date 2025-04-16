@@ -190,15 +190,15 @@ Explanation: [2,3] has the largest product 6.
 - calculate suffix, encounter 0?, reset suffix and continue
 - every iteration calc maxProduct
 
-2239. Find Closest Number to Zero
-Given an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.
-Input: nums = [-4,-2,1,4,8]
-Output: 1
-Input: nums = [2,-1,1]
-Output: 1
-Explanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.
-- abs of cur and track
-- if abs are same, check for max
+    2239. Find Closest Number to Zero
+    Given an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.
+    Input: nums = [-4,-2,1,4,8]
+    Output: 1
+    Input: nums = [2,-1,1]
+    Output: 1
+    Explanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.
+    - abs of cur and track
+    - if abs are same, check for max
 
 1768. Merge Strings Alternately
 You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
