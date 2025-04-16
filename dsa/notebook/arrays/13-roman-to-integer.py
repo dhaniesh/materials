@@ -50,7 +50,9 @@ import unittest
 
 """
 Approach:
-
+ - iterate from reverse
+ - if prev > curr, -
+ - else +
 
 """
 
