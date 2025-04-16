@@ -33,14 +33,13 @@ Use counter
 
 Moore voting algorthm
 - use count, majority variables
-- if next num is same as majority, count ++, else count--
 - if count = 0, majority = num
+- if num is same as majority, count ++, else count--
 """
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         count = 0
-        majority = nums[0]
         for num in nums:
             if count == 0:
                 majority = num
