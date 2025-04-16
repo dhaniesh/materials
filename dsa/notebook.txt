@@ -1,240 +1,240 @@
-==================== ARRAYS ====================
+    ==================== ARRAYS ====================
 
-325. Longest Subarray with Sum K (Medium)
-Given an array arr[] containing integers and an integer k, your task is to find the length of the longest subarray where the sum of its elements is equal to the given value k. If there is no subarray with sum equal to k, return 0.
-Input: arr[] = [10, 5, 2, 7, 1, -10], k = 15
-Output: 6
-- hashmap
-- sum up the left elements
-- if sum == k update max_sum
-- if sum-k exists in hashmap, update max_sum
-- if sum not in hashmap, hashmap[sum] = i (hashmap should not be updated, reason: maximum length occurs when hashmap[sum] has min value)
+    325. Longest Subarray with Sum K (Medium)
+    Given an array arr[] containing integers and an integer k, your task is to find the length of the longest subarray where the sum of its elements is equal to the given value k. If there is no subarray with sum equal to k, return 0.
+    Input: arr[] = [10, 5, 2, 7, 1, -10], k = 15
+    Output: 6
+    - hashmap
+    - sum up the left elements
+    - if sum == k update max_sum
+    - if sum-k exists in hashmap, update max_sum
+    - if sum not in hashmap, hashmap[sum] = i (hashmap should not be updated, reason: maximum length occurs when hashmap[sum] has min value)
 
-Longest Subarray with Sum K if values are greater than 0 (Medium)
-- use two pointers
-- if value is more than k, i++
-- j++, if sum == nums[j], update max
+    Longest Subarray with Sum K if values are greater than 0 (Medium)
+    - use two pointers
+    - if value is more than k, i++
+    - j++, if sum == nums[j], update max
 
-    88. Find the Union (Easy)
-    Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order.
-    Union of two arrays can be defined as the set containing distinct common elements that are present in either of the arrays.
-    Input: a = [1, 2, 3, 4, 5], b = [1, 2, 3, 6, 7]
-    Output: 1 2 3 4 5 6 7
-    - thinking
-    - while i<m, j<n
-    - >, <, = conditions
-    - inc i, j, append only if condition satisfies (not in union array)
-    - use arr[-1] to check the last element instead of "in"
+        88. Find the Union (Easy)
+        Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order.
+        Union of two arrays can be defined as the set containing distinct common elements that are present in either of the arrays.
+        Input: a = [1, 2, 3, 4, 5], b = [1, 2, 3, 6, 7]
+        Output: 1 2 3 4 5 6 7
+        - thinking
+        - while i<m, j<n
+        - >, <, = conditions
+        - inc i, j, append only if condition satisfies (not in union array)
+        - use arr[-1] to check the last element instead of "in"
 
-    1. Two Sum (Easy)
-    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-    You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.
-    Input: nums = [2,7,11,15], target = 9. Output: [0,1].Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
-    - use hashmap
-    - iterate through nums, check if target-num present in hashmap
-    - return if match found, else add the value:index
+        1. Two Sum (Easy)
+        Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+        You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.
+        Input: nums = [2,7,11,15], target = 9. Output: [0,1].Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+        - use hashmap
+        - iterate through nums, check if target-num present in hashmap
+        - return if match found, else add the value:index
 
-75. Sort Colors (Medium)
-Input: nums = [2,0,2,1,1,0] Output: [0,0,1,1,2,2]
-- use two pointer, l, r
-- third pointer i for each element
-- if i == 0, swap to left, l++, i++
-- elif i == 2, swap to right, r-- (i is not ++ here, current is swapped, so it can contain a 0 or 1)
-- else (it is a 1, so i++)
+    75. Sort Colors (Medium)
+    Input: nums = [2,0,2,1,1,0] Output: [0,0,1,1,2,2]
+    - use two pointer, l, r
+    - third pointer i for each element
+    - if i == 0, swap to left, l++, i++
+    - elif i == 2, swap to right, r-- (i is not ++ here, current is swapped, so it can contain a 0 or 1)
+    - else (it is a 1, so i++)
 
-169. Majority Element (Easy)
-Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
-Input: nums = [3,2,3] Output: 3
-- moore's voting algorithm (more than n/2, all will be cancelled out except majority element)
-- init count and majority var
-- if count == 0, majority = current value
-- if iter == majority, count++
-- else count--
+    169. Majority Element (Easy)
+    Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+    Input: nums = [3,2,3] Output: 3
+    - moore's voting algorithm (more than n/2, all will be cancelled out except majority element)
+    - init count and majority var
+    - if count == 0, majority = current value
+    - if iter == majority, count++
+    - else count--
 
-53. Maximum Subarray (Medium)
-Given an integer array nums, find the subarray with the largest sum, and return its sum.
-Input: nums = [-2,1,-3,4,-1,2,1,-5,4] Output: 6
-Explanation: The subarray [4,-1,2,1] has the largest sum 6.
-- Kadane's algorithm
-- If a number makes the sum less than 0, make sum equate to 0
-- add current element and check 
+    53. Maximum Subarray (Medium)
+    Given an integer array nums, find the subarray with the largest sum, and return its sum.
+    Input: nums = [-2,1,-3,4,-1,2,1,-5,4] Output: 6
+    Explanation: The subarray [4,-1,2,1] has the largest sum 6.
+    - Kadane's algorithm
+    - If a number makes the sum less than 0, make sum equate to 0
+    - add current element and check 
 
-121. Best Time to Buy and Sell Stock (Easy)
-You are given an array prices where prices[i] is the price of a given stock on the ith day.
-You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
-Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-Input: prices = [7,1,5,3,6,4] Output: 5
-Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
-- set profit=0, buy = maxsize
-- if price < buy, buy the stock
-- on every iteration check for price - buy which= selling price
-- track max selling price
+    121. Best Time to Buy and Sell Stock (Easy)
+    You are given an array prices where prices[i] is the price of a given stock on the ith day.
+    You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+    Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+    Input: prices = [7,1,5,3,6,4] Output: 5
+    Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+    Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+    - set profit=0, buy = maxsize
+    - if price < buy, buy the stock
+    - on every iteration check for price - buy which= selling price
+    - track max selling price
 
-2149. Rearrange Array Elements by Sign (Medium)
-You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
-[pos, neg, pos, neg ...] order maintained
-Input: nums = [3,1,-2,-5,2,-4] Output: [3,-2,1,-5,2,-4]
-- p, n = 0,2
-- init empty arr [0] * len(nums)
-- iterate through nums array
-- if >0 arr[p], if <0 arr[n]
+    2149. Rearrange Array Elements by Sign (Medium)
+    You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
+    [pos, neg, pos, neg ...] order maintained
+    Input: nums = [3,1,-2,-5,2,-4] Output: [3,-2,1,-5,2,-4]
+    - p, n = 0,2
+    - init empty arr [0] * len(nums)
+    - iterate through nums array
+    - if >0 arr[p], if <0 arr[n]
 
-31. Next Permutation (Medium)
-Input: nums = [1,2,3] Output: [1,3,2], [1, 2, 4, 3, 1], [1, 3, 1, 4, 2]
-- iterate from n-2
-- check n-2 > n-1...
-- if false, set that num as x
-- find a min value in nums[i+1:] that is greater than nums[i], set y
-- swap x, y
-- reverse nums[x+1:]
+    31. Next Permutation (Medium)
+    Input: nums = [1,2,3] Output: [1,3,2], [1, 2, 4, 3, 1], [1, 3, 1, 4, 2]
+    - iterate from n-2
+    - check n-2 > n-1...
+    - if false, set that num as x
+    - find a min value in nums[i+1:] that is greater than nums[i], set y
+    - swap x, y
+    - reverse nums[x+1:]
 
-128. Longest Consecutive Sequence (Medium)
-Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
-You must write an algorithm that runs in O(n) time.
-Input: nums = [100,4,200,1,3,2]
-Output: 4
-Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
-- use set to remove duplicates
-- iterate through nums
-- if num-1 exists, it's not the starting point of seq, so skip that value
-- check for next sums and update seq using while loop, update max of seq
+    128. Longest Consecutive Sequence (Medium)
+    Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+    You must write an algorithm that runs in O(n) time.
+    Input: nums = [100,4,200,1,3,2]
+    Output: 4
+    Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+    - use set to remove duplicates
+    - iterate through nums
+    - if num-1 exists, it's not the starting point of seq, so skip that value
+    - check for next sums and update seq using while loop, update max of seq
 
-73. Set Matrix Zeroes (Medium)
-Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
-You must do it in place.
-Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
-Output: [[1,0,1],[0,0,0],[1,0,1]]
-- keep all the tracking in the first row and column
-- for (0, 0), use a variable
-- on the second traversal, modify the range (1 to i and i to j), leaving the first row and colums for reference
-- then modify the row, then the column, order is important, if column goes first, it would change the tracking of the row data
+    73. Set Matrix Zeroes (Medium)
+    Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+    You must do it in place.
+    Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+    Output: [[1,0,1],[0,0,0],[1,0,1]]
+    - keep all the tracking in the first row and column
+    - for (0, 0), use a variable
+    - on the second traversal, modify the range (1 to i and i to j), leaving the first row and colums for reference
+    - then modify the row, then the column, order is important, if column goes first, it would change the tracking of the row data
 
-48. Rotate Image (Medium)
-You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
-You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
-Output: [[7,4,1],[8,5,2],[9,6,3]]
-- transpose (ij, ji = ji, ij) (run only till the middle of each row)
-- reverse the matrix wrt y axis
+    48. Rotate Image (Medium)
+    You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+    You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+    Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+    Output: [[7,4,1],[8,5,2],[9,6,3]]
+    - transpose (ij, ji = ji, ij) (run only till the middle of each row)
+    - reverse the matrix wrt y axis
 
-54. Spiral Matrix (Medium)
-Given an m x n matrix, return all elements of the matrix in spiral order.
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
-Output: [1,2,3,6,9,8,7,4,5]
-- top=0, bottom=m-1, left=0, right=n-1
-- while top<=bottom and left<=right
-- travel right, down, left, up
-- edge cases
+    54. Spiral Matrix (Medium)
+    Given an m x n matrix, return all elements of the matrix in spiral order.
+    Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+    Output: [1,2,3,6,9,8,7,4,5]
+    - top=0, bottom=m-1, left=0, right=n-1
+    - while top<=bottom and left<=right
+    - travel right, down, left, up
+    - edge cases
 
-560. Subarray Sum Equals K (Medium)
-Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
-A subarray is a contiguous non-empty sequence of elements within an array.
-Input: nums = [1,1,1], k = 2
-Output: 2
-- iterate, find prefix sum
-- if sum equals k, count++
-- if sum-k in hash, count += hash[sum-k]
-- update hash (hash[sum] = hash.get(sum,0) + 1)
-- return count
+    560. Subarray Sum Equals K (Medium)
+    Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
+    A subarray is a contiguous non-empty sequence of elements within an array.
+    Input: nums = [1,1,1], k = 2
+    Output: 2
+    - iterate, find prefix sum
+    - if sum equals k, count++
+    - if sum-k in hash, count += hash[sum-k]
+    - update hash (hash[sum] = hash.get(sum,0) + 1)
+    - return count
 
-229. Majority Element II (Hard)
-Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
-Input: nums = [3,2,3] Output: [3]
-- extended moore voting algorithm
-- after all iteration, check the count of the candidates
-- reutrn all those if > n/3
+    229. Majority Element II (Hard)
+    Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+    Input: nums = [3,2,3] Output: [3]
+    - extended moore voting algorithm
+    - after all iteration, check the count of the candidates
+    - reutrn all those if > n/3
 
-15. 3 Sum (Hard)
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
-Notice that the solution set must not contain duplicate triplets.
-Input: nums = [-1,0,1,2,-1,-4]
-Output: [[-1,-1,2],[-1,0,1]]
-- sort the array
-- iterate the array, num will be the first element
-- use two pointers, l and r from (i+1 till n-2)
-- if sum > 0 r--, sum < 0 l++
-- else-> sum is 0, add to result (note: may contain duplicates, so check for adjacent elements from left and right and skip them)
+    15. 3 Sum (Hard)
+    Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+    Notice that the solution set must not contain duplicate triplets.
+    Input: nums = [-1,0,1,2,-1,-4]
+    Output: [[-1,-1,2],[-1,0,1]]
+    - sort the array
+    - iterate the array, num will be the first element
+    - use two pointers, l and r from (i+1 till n-2)
+    - if sum > 0 r--, sum < 0 l++
+    - else-> sum is 0, add to result (note: may contain duplicates, so check for adjacent elements from left and right and skip them)
 
-88. Merge Sorted Array
-Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
-Output: [1,2,2,3,5,6]
-Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
-The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
-- use n as while (as nums2 has to be updated in nums1 - in place)
-- if m >= 0 and n1[n] > n2[m], then assign
-- elif n >= 0, assign n2[n] to current
+    88. Merge Sorted Array
+    Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+    Output: [1,2,2,3,5,6]
+    Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+    The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+    - use n as while (as nums2 has to be updated in nums1 - in place)
+    - if m >= 0 and n1[n] > n2[m], then assign
+    - elif n >= 0, assign n2[n] to current
 
-56. Merge Intervals
-Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
-Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
-Output: [[1,6],[8,10],[15,18]]
-Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
-- intuition: sort and check for cases (either conflict or unique)
-- if conflict, update the end with max of both ends ([0, 1], [0, 2] -> [0, 2])
-- else append to result
+    56. Merge Intervals
+    Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
+    Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+    Output: [[1,6],[8,10],[15,18]]
+    Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
+    - intuition: sort and check for cases (either conflict or unique)
+    - if conflict, update the end with max of both ends ([0, 1], [0, 2] -> [0, 2])
+    - else append to result
 
-Missing And Repeating
-Given an unsorted array arr of positive integers. One number a from the set [1, 2,....,n] is missing and one number b occurs twice in the array. Find numbers a and b.
-- approach1: using hashmap and natural number sum formula
-- approach2: as it contains natural numbers, use the abs(values)-1 as index and mark the values at those with - negative
-- eventually the repeating number will be negated already
-- for missing number, the index+1 where index is the index of a positive number
+    Missing And Repeating
+    Given an unsorted array arr of positive integers. One number a from the set [1, 2,....,n] is missing and one number b occurs twice in the array. Find numbers a and b.
+    - approach1: using hashmap and natural number sum formula
+    - approach2: as it contains natural numbers, use the abs(values)-1 as index and mark the values at those with - negative
+    - eventually the repeating number will be negated already
+    - for missing number, the index+1 where index is the index of a positive number
 
-152. Maximum Product Subarray
-Given an integer array nums, find a subarray that has the largest product, and return the product.
-Input: nums = [2,3,-2,4]
-Output: 6
-Explanation: [2,3] has the largest product 6.
-- calculate prefix, encounter 0?, reset prefix and continue
-- calculate suffix, encounter 0?, reset suffix and continue
-- every iteration calc maxProduct
+    152. Maximum Product Subarray
+    Given an integer array nums, find a subarray that has the largest product, and return the product.
+    Input: nums = [2,3,-2,4]
+    Output: 6
+    Explanation: [2,3] has the largest product 6.
+    - calculate prefix, encounter 0?, reset prefix and continue
+    - calculate suffix, encounter 0?, reset suffix and continue
+    - every iteration calc maxProduct
 
-    2239. Find Closest Number to Zero
-    Given an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.
-    Input: nums = [-4,-2,1,4,8]
-    Output: 1
-    Input: nums = [2,-1,1]
-    Output: 1
-    Explanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.
-    - abs of cur and track
-    - if abs are same, check for max
+        2239. Find Closest Number to Zero
+        Given an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.
+        Input: nums = [-4,-2,1,4,8]
+        Output: 1
+        Input: nums = [2,-1,1]
+        Output: 1
+        Explanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.
+        - abs of cur and track
+        - if abs are same, check for max
 
-1768. Merge Strings Alternately
-You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
-Input: word1 = "abc", word2 = "pqr"
-Output: "apbqcr"
-- two pointer, while or, merge, merge rest when condition fails
+    1768. Merge Strings Alternately
+    You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
+    Input: word1 = "abc", word2 = "pqr"
+    Output: "apbqcr"
+    - two pointer, while or, merge, merge rest when condition fails
 
-13. Roman to Integer
-Input: s = "LVIII"
-Output: 58
-- 2 pointer pair, reverse, if cur is large, add, else sub
+    13. Roman to Integer
+    Input: s = "LVIII"
+    Output: 58
+    - 2 pointer pair, reverse, if cur is large, add, else sub
 
-392. Is Subsequence
-Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
-Input: s = "abc", t = "ahbgdc"
-Output: true
-- two pointers, iterate and move, 3 var to mark count, if it is same as len(s), true, else false
+    392. Is Subsequence
+    Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+    Input: s = "abc", t = "ahbgdc"
+    Output: true
+    - two pointers, iterate and move, 3 var to mark count, if it is same as len(s), true, else false
 
-14. Longest Common Prefix
-Write a function to find the longest common prefix string amongst an array of strings.
-If there is no common prefix, return an empty string "".
-Input: strs = ["flower","flow","flight"]
-Output: "fl"
-- calculate adj prefix
+    14. Longest Common Prefix
+    Write a function to find the longest common prefix string amongst an array of strings.
+    If there is no common prefix, return an empty string "".
+    Input: strs = ["flower","flow","flight"]
+    Output: "fl"
+    - calculate adj prefix
 
-228. Summary Ranges
-Return the smallest sorted list of ranges that cover all the numbers in the array exactly. That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.
-Each range [a,b] in the list should be output as:
-"a->b" if a != b
-"a" if a == b
-Input: nums = [0,1,2,4,5,7]
-Output: ["0->2","4->5","7"]
-- two pointers
+    228. Summary Ranges
+    Return the smallest sorted list of ranges that cover all the numbers in the array exactly. That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.
+    Each range [a,b] in the list should be output as:
+    "a->b" if a != b
+    "a" if a == b
+    Input: nums = [0,1,2,4,5,7]
+    Output: ["0->2","4->5","7"]
+    - two pointers
 
-238. Product of Array Except Self
-- product left, right, merge
+    238. Product of Array Except Self
+    - product left, right, merge
 
 ==================== BINARY SERACH ====================
 
