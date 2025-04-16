@@ -15,24 +15,24 @@ Longest Subarray with Sum K if values are greater than 0 (Medium)
 - if value is more than k, i++
 - j++, if sum == nums[j], update max
 
-88. Find the Union (Easy)
-Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order.
-Union of two arrays can be defined as the set containing distinct common elements that are present in either of the arrays.
-Input: a = [1, 2, 3, 4, 5], b = [1, 2, 3, 6, 7]
-Output: 1 2 3 4 5 6 7
-- thinking
-- while i<m, j<n
-- >, <, = conditions
-- inc i, j, append only if condition satisfies (not in union array)
-- use arr[-1] to check the last element instead of "in"
+    88. Find the Union (Easy)
+    Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order.
+    Union of two arrays can be defined as the set containing distinct common elements that are present in either of the arrays.
+    Input: a = [1, 2, 3, 4, 5], b = [1, 2, 3, 6, 7]
+    Output: 1 2 3 4 5 6 7
+    - thinking
+    - while i<m, j<n
+    - >, <, = conditions
+    - inc i, j, append only if condition satisfies (not in union array)
+    - use arr[-1] to check the last element instead of "in"
 
-1. Two Sum (Easy)
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.
-Input: nums = [2,7,11,15], target = 9. Output: [0,1].Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
-- use hashmap
-- iterate through nums, check if target-num present in hashmap
-- return if match found, else add the value:index
+    1. Two Sum (Easy)
+    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+    You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.
+    Input: nums = [2,7,11,15], target = 9. Output: [0,1].Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+    - use hashmap
+    - iterate through nums, check if target-num present in hashmap
+    - return if match found, else add the value:index
 
 75. Sort Colors (Medium)
 Input: nums = [2,0,2,1,1,0] Output: [0,0,1,1,2,2]
