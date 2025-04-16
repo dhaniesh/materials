@@ -411,7 +411,7 @@ Explanation: The answer is "abc", with the length of 3.
 
 567. Permutation in String
 - use counter
-
+ 
 ==================== LINKED LIST ====================
 237. Delete Node in a Linked List
 Input: head = [4,5,1,9], node = 5
