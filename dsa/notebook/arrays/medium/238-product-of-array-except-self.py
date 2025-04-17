@@ -38,7 +38,21 @@ Approach:
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        pass
+        n = len(nums)
+        left = [1]*n
+        right = [1]*n
+        product = 1
+        for i in range(n-1, -1, -1):
+            right[i] = product
+            product *= nums[i]
+        
+        product = 1
+        for i in range(n):
+            left[i] = product
+            product *= nums[i]
+            nums[i] = left[i] * right[i]
+        return nums
+
 
 class TestProductOfArrayExceptSelf(unittest.TestCase):
     def setUp(self):
@@ -67,7 +81,7 @@ class TestProductOfArrayExceptSelf(unittest.TestCase):
     def test_mixed_numbers(self):
         nums = [1, 0, -1, 3, -4]
         result = self.solution.productExceptSelf(nums)
-        self.assertEqual(result, [0, 0, 0, 0, 0])
+        self.assertEqual(result, [0, 12, 0, 0, 0])
 
 if __name__ == "__main__":
     unittest.main()
