@@ -29,13 +29,25 @@ import unittest
 
 """
 Approach:
-
+- use array and it's indexes instead of a hashmap
+- why? range is always within 1 and 9
 
 """
 
 class Solution:
     def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
-        pass
+        n = len(grid)
+        occurence = [0] * (n*n + 1)
+        for i in range(len(grid)):
+            for j in range(len(grid)):
+                if occurence[grid[i][j]]:
+                    duplicate = grid[i][j]
+                occurence[grid[i][j]] +=1
+
+        for i, count in enumerate(occurence):
+            if i and count == 0:
+                return [duplicate, i]          
+        return [0, 0]  
 
 class TestFindMissingAndRepeatedValues(unittest.TestCase):
     def setUp(self):
