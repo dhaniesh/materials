@@ -24,7 +24,9 @@ import unittest
 
 """
 Approach:
-
+- use set to remove duplicates
+- check if num-1 exists, if so skip
+- else calculate length
 
 """
 

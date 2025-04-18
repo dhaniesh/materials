@@ -26,13 +26,32 @@ import unittest
 
 """
 Approach:
-
+- calc prefix, suffix, update max
+- edge case, if 0, let product come back to 1 
 
 """
 
+
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        pass
+        result = max(nums)
+        product = 1
+        for num in nums:
+            if num == 0:
+                product = 1
+                continue
+            product *= num
+            result = max(result, product)
+
+        product = 1
+        for num in nums[::-1]:
+            if num == 0:
+                product = 1
+                continue
+            product *= num
+            result = max(result, product)
+        return result
+
 
 class TestMaximumProductSubarray(unittest.TestCase):
     def setUp(self):
@@ -48,7 +67,7 @@ class TestMaximumProductSubarray(unittest.TestCase):
 
     def test_all_negative(self):
         nums = [-2, -3, -4]
-        self.assertEqual(self.solution.maxProduct(nums), 24)
+        self.assertEqual(self.solution.maxProduct(nums), 12)
 
     def test_single_element(self):
         nums = [-1]
@@ -57,6 +76,7 @@ class TestMaximumProductSubarray(unittest.TestCase):
     def test_large_numbers(self):
         nums = [1, 2, 3, 4, 5]
         self.assertEqual(self.solution.maxProduct(nums), 120)
+
 
 if __name__ == "__main__":
     unittest.main()
