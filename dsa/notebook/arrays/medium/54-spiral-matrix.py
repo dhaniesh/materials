@@ -23,7 +23,8 @@ import unittest
 
 """
 Approach:
-
+top, bottom, left, and right
+edge cases
 
 """
 
