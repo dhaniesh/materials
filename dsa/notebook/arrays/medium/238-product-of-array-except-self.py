@@ -32,7 +32,8 @@ import unittest
 
 """
 Approach:
-
+- calculate left and right
+- merge
 
 """
 
