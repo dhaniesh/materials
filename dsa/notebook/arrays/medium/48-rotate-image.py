@@ -24,27 +24,40 @@ import unittest
 
 """
 Approach:
-
+- transpose
+- reverse
 
 """
 
+
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
-        pass
+        m = len(matrix)
+        # transpose
+        for i in range(m):
+            for j in range(i):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+        # mirror
+        for i in range(m):
+            matrix[i] = matrix[i][::-1]
+
 
 class TestRotateImage(unittest.TestCase):
     def setUp(self):
         self.solution = Solution()
 
     def test_example_1(self):
-        matrix = [[1,2,3],[4,5,6],[7,8,9]]
+        matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
         self.solution.rotate(matrix)
-        self.assertEqual(matrix, [[7,4,1],[8,5,2],[9,6,3]])
+        self.assertEqual(matrix, [[7, 4, 1], [8, 5, 2], [9, 6, 3]])
 
     def test_example_2(self):
-        matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+        matrix = [[5, 1, 9, 11], [2, 4, 8, 10],
+                  [13, 3, 6, 7], [15, 14, 12, 16]]
         self.solution.rotate(matrix)
-        self.assertEqual(matrix, [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]])
+        self.assertEqual(matrix, [[15, 13, 2, 5], [14, 3, 4, 1], [
+                         12, 6, 8, 9], [16, 7, 10, 11]])
 
     def test_single_element(self):
         matrix = [[1]]
@@ -52,9 +65,10 @@ class TestRotateImage(unittest.TestCase):
         self.assertEqual(matrix, [[1]])
 
     def test_two_by_two(self):
-        matrix = [[1,2],[3,4]]
+        matrix = [[1, 2], [3, 4]]
         self.solution.rotate(matrix)
-        self.assertEqual(matrix, [[3,1],[4,2]])
+        self.assertEqual(matrix, [[3, 1], [4, 2]])
+
 
 if __name__ == "__main__":
     unittest.main()
