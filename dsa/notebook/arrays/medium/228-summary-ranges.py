@@ -27,9 +27,27 @@ Approach:
 
 """
 
+
 class Solution:
     def summaryRanges(self, nums: List[int]) -> List[str]:
-        pass
+        result = []
+        ranges = []
+        i = j = 0
+        while i <= j < len(nums):
+            if nums[j] != nums[-1] and nums[j]+1 == nums[j+1]:
+                j += 1
+            else:
+                ranges.append([nums[i], nums[j]])
+                j += 1
+                i = j
+
+        for _rnge in ranges:
+            if _rnge[0] == _rnge[-1]:
+                result.append(f'{_rnge[0]}')
+            else:
+                result.append(f'{_rnge[0]}->{_rnge[-1]}')
+        return result
+
 
 class TestSummaryRanges(unittest.TestCase):
     def setUp(self):
@@ -59,6 +77,7 @@ class TestSummaryRanges(unittest.TestCase):
         nums = [1, 3, 5, 7]
         result = self.solution.summaryRanges(nums)
         self.assertEqual(result, ["1", "3", "5", "7"])
+
 
 if __name__ == "__main__":
     unittest.main()
