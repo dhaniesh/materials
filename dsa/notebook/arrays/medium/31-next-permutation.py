@@ -42,7 +42,25 @@ Approach:
 
 class Solution:
     def nextPermutation(self, nums: List[int]) -> None:
-        pass
+        x = -1
+        for i in range(len(nums)-2, -1, -1):
+            if nums[i] < nums[i+1]:
+                x = i
+                break
+        
+        if x == -1:
+            nums[:] = nums[::-1]
+            return
+        
+        y = -1
+        for j in range(len(nums)-1, -1, -1):
+            if nums[j] > nums[x]:
+                y = j
+                break
+        
+        nums[y], nums[x] = nums[x], nums[y]
+        nums[x+1:] = nums[x+1:][::-1]
+        return
 
 class TestNextPermutation(unittest.TestCase):
     def setUp(self):
