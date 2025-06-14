@@ -1,0 +1,288 @@
+3-Month Plan (12 Weeks)
+Week 1–2: Foundation and DSA Basics
+Goal: Build a strong foundation in DSA and refresh backend fundamentals.
+Data Structures and Algorithms (4–5 hours/day):
+Resources: 
+LeetCode (Easy and Medium problems)
+
+"Cracking the Coding Interview" by Gayle Laakmann McDowell
+
+NeetCode.io (for curated problem lists)
+
+Topics to Cover:
+Arrays, Strings, HashMaps, Two Pointers, Sliding Window
+
+Stacks, Queues, Linked Lists
+
+Basic Recursion and Backtracking
+
+Action Plan:
+Solve 5–7 problems/day (mix of Easy and Medium).
+
+Focus on understanding patterns (e.g., two-pointer for array problems).
+
+Write clean, optimized code in your preferred language (Python, Java, or C++ are common for backend roles).
+
+Review solutions and optimize for time/space complexity.
+
+Backend Fundamentals (2 hours/day):
+Topics:
+HTTP, REST APIs, CRUD operations
+
+Basics of relational (SQL) and NoSQL databases
+
+Authentication (OAuth, JWT)
+
+Caching (Redis, Memcached)
+
+Resources:
+"Designing Data-Intensive Applications" (skim relevant chapters)
+
+FreeCodeCamp’s Backend Development tutorials
+
+YouTube: Tech With Tim or Fireship for quick refreshers
+
+Action Plan:
+Review REST API design principles and write sample APIs (use Flask/Django for Python or Spring Boot for Java).
+
+Practice basic SQL queries (SELECT, JOIN, GROUP BY) on LeetCode’s Database section or HackerRank.
+
+Daily Routine:
+4–5 hours: DSA problem-solving
+
+2 hours: Backend theory and practice
+
+1 hour: Review mistakes and document key learnings
+
+Week 3–6: Intermediate DSA and Backend Deep Dive
+Goal: Tackle harder DSA problems and deepen backend expertise.
+Data Structures and Algorithms (4–5 hours/day):
+Topics:
+Trees (Binary Trees, BST, Trie)
+
+Graphs (DFS, BFS, Shortest Path, Topological Sort)
+
+Dynamic Programming (1D, 2D, Greedy)
+
+Advanced Recursion and Backtracking
+
+Action Plan:
+Solve 5–7 problems/day (mostly Medium, some Hard).
+
+Follow NeetCode’s 150 problem list or LeetCode’s “Top 100 Liked Questions.”
+
+Practice problems from past company interviews (use LeetCode’s company filter).
+
+Write detailed notes on problem patterns (e.g., when to use BFS vs. DFS).
+
+Backend Development (2–3 hours/day):
+Topics:
+Database design (normalization, indexing, sharding)
+
+Microservices architecture
+
+Message queues (Kafka, RabbitMQ)
+
+Scalability concepts (load balancing, horizontal vs. vertical scaling)
+
+Resources:
+"System Design Interview" by Alex Xu (start reading)
+
+YouTube: Gaurav Sen or System Design Interview channels
+
+Blog: Read Medium articles on backend architecture
+
+Action Plan:
+Build 1–2 small backend projects (e.g., a task manager API with user authentication and database integration).
+
+Practice SQL (complex queries, optimization) and NoSQL (MongoDB queries).
+
+Study how real-world systems (e.g., Netflix, Uber) handle scale.
+
+Daily Routine:
+4–5 hours: DSA (focus on Medium/Hard problems)
+
+2–3 hours: Backend projects and theory
+
+1 hour: Review and note patterns or mistakes
+
+Week 7–9: Advanced DSA and System Design
+Goal: Master complex DSA problems and learn system design.
+Data Structures and Algorithms (3–4 hours/day):
+Topics:
+Advanced Graphs (Minimum Spanning Tree, Dijkstra’s, Floyd-Warshall)
+
+Advanced DP (state-based, optimization problems)
+
+Bit Manipulation
+
+Heap and Priority Queue
+
+Action Plan:
+Solve 4–5 problems/day (mostly Hard, some Medium for revision).
+
+Revisit weak areas (e.g., DP or Graphs) and solve targeted problems.
+
+Practice under time constraints (e.g., 30–40 mins per Medium problem).
+
+System Design (2–3 hours/day):
+Topics:
+Design patterns (e.g., Singleton, Factory for backend)
+
+High-level design (HLD): URL shortener, chat system, e-commerce platform
+
+Low-level design (LLD): Design a rate limiter, logging system
+
+Scalability, reliability, availability (CAP theorem, consistency models)
+
+Resources:
+"System Design Interview" by Alex Xu (focus on HLD)
+
+Grok’s System Design Mode (if available, for iterative learning)
+
+YouTube: Tech Dummies or ByteByteGo
+
+Action Plan:
+Practice 1–2 system design problems/week (e.g., design Twitter, WhatsApp).
+
+Draw architecture diagrams and explain trade-offs (e.g., SQL vs. NoSQL).
+
+Learn to break down requirements and estimate capacity (e.g., QPS, storage).
+
+Daily Routine:
+3–4 hours: DSA (Hard problems and revision)
+
+2–3 hours: System design practice and theory
+
+1 hour: Review and refine explanations
+
+Week 10–12: Mock Interviews and Polishing
+Goal: Simulate interviews, polish resume, and prepare for behavioral rounds.
+Data Structures and Algorithms (2–3 hours/day):
+Action Plan:
+Solve 3–4 problems/day (mix of Medium and Hard).
+
+Revisit bookmarked problems (mistakes or challenging ones).
+
+Practice explaining solutions aloud clearly and concisely.
+
+System Design (2 hours/day):
+Action Plan:
+Practice 2–3 system design problems/week (e.g., design Instagram, ride-sharing).
+
+Focus on articulating trade-offs and justifying design choices.
+
+Mock system design interviews with peers or platforms like Pramp or DesignGuru.
+
+Mock Interviews (1–2 hours/day):
+Resources:
+Pramp, Interviewing.io, or LeetCode’s mock interview feature
+
+Pair up with a friend or mentor for peer interviews
+
+Action Plan:
+Do 1–2 mock interviews/week (coding + system design).
+
+Record yourself to improve clarity and confidence.
+
+Get feedback on problem-solving approach and communication.
+
+Behavioral Interviews (1 hour/day):
+Topics:
+Leadership principles (e.g., Amazon’s 16 LPs)
+
+Conflict resolution, teamwork, handling failure
+
+STAR method (Situation, Task, Action, Result)
+
+Action Plan:
+Prepare 5–7 stories from your experience (e.g., a challenging project, a bug you fixed).
+
+Practice answering common questions: “Tell me about a time you failed,” “Why this company?”
+
+Research company values and align your answers.
+
+Resume and Portfolio (2–3 hours/week):
+Update your resume to highlight backend projects, technologies (e.g., Node.js, Spring Boot, Docker), and impact.
+
+Add 1–2 polished projects to GitHub (e.g., a scalable REST API with documentation).
+
+Tailor your resume for each company, emphasizing relevant skills.
+
+Daily Routine:
+2–3 hours: DSA revision
+
+2 hours: System design practice
+
+1–2 hours: Mock interviews
+
+1 hour: Behavioral prep and resume refinement
+
+Key Resources
+DSA:
+LeetCode (Premium for company-specific problems)
+
+NeetCode.io (free curated list)
+
+HackerRank (for additional practice)
+
+System Design:
+"System Design Interview" by Alex Xu
+
+ByteByteGo (YouTube and blog)
+
+DesignGuru.io (structured course)
+
+Backend:
+"Designing Data-Intensive Applications" by Martin Kleppmann
+
+FreeCodeCamp, Coursera, or Udemy for backend courses
+
+Mock Interviews:
+Pramp (free peer-to-peer)
+
+Interviewing.io (paid but high-quality)
+
+Behavioral:
+Amazon’s Leadership Principles (for FAANG prep)
+
+STAR method guides on YouTube
+
+Tips for Success
+Consistency: Study 6–8 hours/day, balancing coding, theory, and practice.
+
+Track Progress: Use a spreadsheet to log problems solved, topics covered, and weak areas.
+
+Focus on Weaknesses: Spend extra time on topics you struggle with (e.g., DP or system design).
+
+Network: Apply early to companies and use LinkedIn to connect with recruiters.
+
+Stay Healthy: Take breaks, sleep well, and manage stress to stay sharp.
+
+Sample Weekly Schedule
+Monday–Friday:
+3–4 hours: DSA (solve 5 problems)
+
+2 hours: Backend/System design (theory or project)
+
+1 hour: Review or behavioral prep
+
+Saturday:
+4 hours: Mock interview (coding + system design)
+
+2 hours: Revise weak topics
+
+Sunday:
+3 hours: Light revision or project work
+
+1 hour: Plan for next week
+
+Final Notes
+Apply Early: Start applying to companies in Week 8 to secure interviews by Week 12.
+
+Stay Confident: With 2 YOE, you already have practical backend knowledge—focus on translating it into interview success.
+
+Leverage Grok: Use me to clarify doubts, explain concepts, or simulate mock interviews (e.g., “Explain how to design a URL shortener” or “Solve a LeetCode Medium problem”).
+
+If you want me to dive deeper into any topic (e.g., a specific DSA problem, system design case study, or behavioral question prep), let me know!
+
