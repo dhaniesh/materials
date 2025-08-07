@@ -15,3 +15,11 @@
     GROUP BY r.contest_id
     ORDER BY percentage DESC
         ,r.contest_id ASC;
+
+### 1211. Queries Quality and Percentage
+SELECT 
+    q.query_name,
+    ROUND(AVG(rating::decimal / position), 2) AS quality,
+    ROUND(AVG(CASE WHEN rating < 3 THEN 1 ELSE 0 END) * 100, 2) AS poor_query_percentage
+FROM Queries q
+GROUP BY q.query_name;
