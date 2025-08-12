@@ -33,3 +33,21 @@
             SUM(CASE WHEN state='approved' THEN amount ELSE 0 END) AS approved_total_amount
     FROM Transactions
     GROUP BY month, country
+
+
+### 1174. Immediate Food Delivery II
+    WITH first_orders
+        AS (
+            SELECT DISTINCT ON (customer_id) customer_id
+                ,order_date
+                ,customer_pref_delivery_date
+            FROM Delivery
+            ORDER BY customer_id
+                ,order_date
+            )
+        SELECT round(avg(CASE 
+                        WHEN order_date = customer_pref_delivery_date
+                            THEN 1
+                        ELSE 0
+                        END) * 100, 2) AS immediate_percentage
+        FROM first_orders;
