@@ -51,3 +51,24 @@
                         ELSE 0
                         END) * 100, 2) AS immediate_percentage
         FROM first_orders;
+
+### 550. Game Play Analysis IV
+    WITH FirstLogin
+    AS (
+	    SELECT player_id
+		    ,MIN(event_date) AS first_login_date
+    	FROM Activity
+	    GROUP BY player_id
+    	)
+    	,NextLogin
+    AS (
+	    SELECT f.player_id
+    	FROM FirstLogin f
+	    JOIN Activity a ON f.player_id = a.player_id
+    		AND f.first_login_date + INTERVAL '1 DAY' = a.event_date
+    	)
+    SELECT ROUND(COUNT(DISTINCT n.player_id)::NUMERIC / (
+    			SELECT COUNT(DISTINCT a.player_id)
+    			FROM Activity a
+    			), 2) AS fraction
+    FROM NextLogin n;
