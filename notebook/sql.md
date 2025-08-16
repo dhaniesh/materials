@@ -77,3 +77,8 @@
     SELECT teacher_id, COUNT(DISTINCT subject_id) as cnt
     FROM Teacher
     GROUP BY teacher_id
+
+### 1141. User Activity for the Past 30 Days I
+    SELECT activity_date AS day, COUNT(DISTINCT(user_id)) AS active_users  FROM Activity 
+    WHERE activity_date BETWEEN '2019-07-27'::DATE - INTERVAL '29 DAYS' AND '2019-07-27'::DATE
+    GROUP BY activity_date
