@@ -106,3 +106,27 @@
     FROM Followers
     GROUP BY user_id
     ORDER BY user_id ASC;
+
+### 619. Biggest Single Number
+    WITH SingleNumbers AS (
+        SELECT num
+        FROM MyNumbers
+        GROUP BY num
+        HAVING COUNT(num) = 1
+    )
+    SELECT MAX(num) AS num
+    FROM SingleNumbers;
+
+### 1789. Primary Department for Each Employee
+    SELECT e.employee_id
+        ,e.department_id
+    FROM Employee e
+    LEFT JOIN Employee d ON e.employee_id = d.employee_id
+        AND d.primary_flag = 'Y'
+    GROUP BY e.employee_id
+        ,e.department_id
+        ,d.department_id
+        ,e.primary_flag
+    HAVING count(*) = 1
+        AND d.department_id IS NULL
+        OR e.primary_flag = 'Y'
