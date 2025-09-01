@@ -132,14 +132,22 @@
         OR e.primary_flag = 'Y'
 
 ### 610. Triangle Judgement
-SELECT x
-	,y
-	,z
-	,CASE 
-		WHEN x + y > z
-			AND y + z > x
-			AND x + z > y
-			THEN 'Yes'
-		ELSE 'No'
-		END AS triangle
-FROM Triangle
+    SELECT x
+	    ,y
+    	,z
+	    ,CASE 
+		    WHEN x + y > z
+			    AND y + z > x
+			    AND x + z > y
+    			THEN 'Yes'
+	    	ELSE 'No'
+    		END AS triangle
+    FROM Triangle
+
+### 180. Consecutive Numbers
+    SELECT DISTINCT L1.num AS "ConsecutiveNums"
+    FROM Logs L1
+    JOIN Logs L2 ON L1.id + 1 = L2.id
+    JOIN Logs L3 ON L2.id + 1 = L3.id
+    WHERE L1.num = L2.num 
+    AND L2.num = L3.num;
