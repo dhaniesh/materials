@@ -7,4 +7,4 @@
 7. Scalability: Horizontal vs Vertical
 8. Network Abstractions: Remote Procedure calls
 9. Distributed Messaging Queue
-10. Rate limiter
+10. Rate limiter 
