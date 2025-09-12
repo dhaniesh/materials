@@ -1,4 +1,5 @@
 3-Month Plan (12 Weeks)
+
 Week 1–2: Foundation and DSA Basics
 Goal: Build a strong foundation in DSA and refresh backend fundamentals.
 Data Structures and Algorithms (4–5 hours/day):
