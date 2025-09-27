@@ -22,7 +22,6 @@ Constraints:
 - 1 <= bad <= n <= 2³¹ - 1
 """
 
-from typing import List
 import unittest
 
 """
@@ -32,38 +31,49 @@ We can divide the range [1, n] into halves and check if the middle version is ba
 If it is, we search in the left half, otherwise, we search in the right half.
 """
 
-class Solution:
+# Mockable version control
+class VersionControl:
+    def __init__(self, bad: int):
+        self.bad = bad
+
+    def isBadVersion(self, version: int) -> bool:
+        return version >= self.bad
+
+
+class Solution(VersionControl):
     def firstBadVersion(self, n: int) -> int:
-        pass
+        l, r = 1, n
+        while l < r:
+            m = (l + r) // 2
+            if self.isBadVersion(m):
+                r = m
+            else:
+                l = m + 1
+        return l
+
 
 class TestFirstBadVersion(unittest.TestCase):
-    def setUp(self):
-        self.solution = Solution()
 
-    def test_example_1(self):
-        n = 5
-        bad = 4
-        self.assertEqual(self.solution.firstBadVersion(n), 4)
+    def test_case_1(self):
+        sol = Solution(4)
+        self.assertEqual(sol.firstBadVersion(5), 4)
 
-    def test_example_2(self):
-        n = 1
-        bad = 1
-        self.assertEqual(self.solution.firstBadVersion(n), 1)
+    def test_case_single(self):
+        sol = Solution(1)
+        self.assertEqual(sol.firstBadVersion(1), 1)
 
-    def test_large_n(self):
-        n = 10**6
-        bad = 500000
-        self.assertEqual(self.solution.firstBadVersion(n), 500000)
+    def test_case_middle(self):
+        sol = Solution(7)
+        self.assertEqual(sol.firstBadVersion(10), 7)
 
-    def test_first_version_bad(self):
-        n = 10
-        bad = 1
-        self.assertEqual(self.solution.firstBadVersion(n), 1)
+    def test_case_first(self):
+        sol = Solution(1)
+        self.assertEqual(sol.firstBadVersion(100), 1)
 
-    def test_last_version_bad(self):
-        n = 10
-        bad = 10
-        self.assertEqual(self.solution.firstBadVersion(n), 10)
+    def test_case_last(self):
+        sol = Solution(100)
+        self.assertEqual(sol.firstBadVersion(100), 100)
+
 
 if __name__ == "__main__":
     unittest.main()
