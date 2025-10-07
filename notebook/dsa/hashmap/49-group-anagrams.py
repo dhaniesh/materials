@@ -17,6 +17,8 @@ Output: [["a"]]
 """
 
 import unittest
+from typing import List
+from collections import defaultdict
 
 """
 Approach:
@@ -25,8 +27,18 @@ All anagrams will have the same sorted tuple of characters.
 """
 
 class Solution:
-    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        pass
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        result = []
+        word_map = defaultdict(list)  # {occurence: [words]}
+
+        for word in strs:
+            word_tuple = [0] * 26
+            for char in word:
+                word_tuple[ord(char)-97] += 1
+            word_map[tuple(word_tuple)].append(word)
+        for _, grouped_words in word_map.items():
+            result.append(grouped_words) 
+        return result
 
 class TestGroupAnagrams(unittest.TestCase):
     def setUp(self):
