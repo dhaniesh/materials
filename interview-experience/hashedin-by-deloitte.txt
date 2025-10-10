@@ -1,0 +1,47 @@
+Interview Experience HashedIn By Deloitte -Round 2
+
+Design a Hire Tool:
+All the vacancies open in the company. 
+interviews assigned to me 
+List of my referrals 
+
+================================================================= 
+
+Database schema 
+Table_name : col1,col2,… 
+
+Employee: id, name, designation, phone, address 
+
+Job Posting: id, title, desc, department, job description, status (Open/Closed), hiring manager, dates (created and updated), job description 
+Application: id, firstName, lastName, email, resume, jobId, referrerId, applicationStatus (submited/referred, review, interview, hired, rejected), createdDate, updatedDate 
+Interview: id, application id, scheduled date, interviewer id, start, end time, status(scheduled, completed, cancelled), link/invite, created at 
+================================================================= 
+
+APIs  
+
+Job Posting API: /api/v1/jobs 
+POST: creates a new job posting 
+GET: gets the list of jobs (Query: department, Job title, search) 
+PATCH: Makes the posting inactive 
+
+Application API: /api/v1/applications 
+POST: submit a new job application 
+GET: gets the list of applications (Querystring: job id and referrer id) 
+GET {id}: returns data for a particular application 
+
+Interview API: /api/v1/interviews 
+POST: schedule interview (application id, interviewer id, start time and end time) 
+PATCH/PUT: update the interview (postpone or cancel) 
+
+Referrals API: /api/v1/referrals 
+POST: creates a referral for a job posting (referrer di, candidate email, job id) 
+================================================================= 
+
+Technical questions:
+
+- How fastAPI handles concurrency (ASGI)
+- How DB queries can be optimized (Index and partition)
+- What is GIL, How Garbage collector works in python
+- What is async and await
+- how to use async function within normal function (asyncio)
+- CDN, how to set cache TTL to be infinite
