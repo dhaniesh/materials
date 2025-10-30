@@ -20,6 +20,7 @@ Constraints:
 """
 
 import unittest
+from typing import List
 
 """
 Approach:
@@ -30,8 +31,23 @@ maximum heights on both sides.
 """
 
 class Solution:
-    def trap(self, height: List[int]) -> int:
-        pass
+    def trap(self, blocks: List[int]) -> int:
+        n = len(blocks)
+        left = [0] * n
+        right = [0] * n
+        trap = 0
+        prev_max = blocks[0]
+        for i in range(1, n-1):
+            height = blocks[i]
+            left[i] = prev_max
+            prev_max = max(prev_max, height)
+        prev_max = blocks[-1]
+        for i in range(n-2, 0, -1):
+            height = blocks[i]
+            right[i] = prev_max
+            prev_max = max(prev_max, height)
+            trap += max(0, min(left[i], right[i])-height)
+        return trap
 
 class TestTrappingRainWater(unittest.TestCase):
     def setUp(self):
