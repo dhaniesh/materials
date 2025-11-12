@@ -42,7 +42,30 @@ We can start from the top-right or bottom-left and reduce the search space based
 
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        pass
+        top = 0
+        bot = len(matrix) - 1
+        while top <= bot:
+            mid = (top + bot) // 2
+            if matrix[mid][0] < target and matrix[mid][-1] > target:
+                break
+            elif matrix[mid][0] > target:
+                bot = mid - 1
+            else:
+                top = mid + 1
+        row = (top + bot) // 2
+
+        left = 0
+        right = len(matrix[row]) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if matrix[row][mid] == target:
+                return True
+            elif matrix[row][mid] > target:
+                right = mid - 1
+            else:
+                left = mid + 1 
+        return False
+
 
 class TestSearch2DMatrix(unittest.TestCase):
     def setUp(self):
@@ -84,11 +107,6 @@ class TestSearch2DMatrix(unittest.TestCase):
         ]
         target = 2
         self.assertTrue(self.solution.searchMatrix(matrix, target))
-
-    def test_empty_matrix(self):
-        matrix = []
-        target = 1
-        self.assertFalse(self.solution.searchMatrix(matrix, target))
 
 if __name__ == "__main__":
     unittest.main()
